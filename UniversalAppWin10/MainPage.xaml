@@ -94,5 +94,22 @@
             <TextBlock Grid.Row="1" Margin="0,5" Style="{StaticResource message}" HorizontalAlignment="Left" Text="{Binding Utilisateur.NomUtilisateur}" />
             <Button Grid.Row="2" Margin="0,5" Content="Se déconnecter" Command="{Binding DisconnectUserCommand}" />
         </Grid>
+
+        <!--Loader-->
+        <Grid Grid.Column="1"
+              Grid.Row="3"
+              HorizontalAlignment="Center"
+              Visibility="{Binding TraitementEnCours, Converter={StaticResource visibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ProgressRing Grid.Row="1" Width="80" Height="80"  IsActive="True" />
+        </Grid>
+
     </Grid>
 </Page>
