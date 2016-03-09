@@ -22,3 +22,27 @@ C:\Tmp\IUT LP\Projet Visual Studio\WcfService\bin\Debug\Microsoft.Threading.Task
 C:\Tmp\IUT LP\Projet Visual Studio\WcfService\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\Tmp\IUT LP\Projet Visual Studio\WcfService\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
 C:\Tmp\IUT LP\Projet Visual Studio\WcfService\bin\Debug\sqlite3.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\sqlite3.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Oyosoft.AgenceImmobiliere.WcfService.dll.config
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Oyosoft.AgenceImmobiliere.WcfService.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Oyosoft.AgenceImmobiliere.WcfService.pdb
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Oyosoft.AgenceImmobiliere.Core.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\SQLite.Net.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\SQLite.Net.Platform.Generic.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\SQLite.Net.Platform.Win32.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\PCLStorage.Abstractions.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\PCLStorage.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\SQLite.Net.Async.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\JetBrains.Annotations.PCL328.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Oyosoft.AgenceImmobiliere.Core.pdb
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\PCLStorage.Abstractions.xml
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\bin\Debug\PCLStorage.xml
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\obj\Debug\Oyosoft.AgenceImmobiliere.WcfService.dll
+C:\Users\lp\Source\Repos\AgenceImmobiliere\WcfService\obj\Debug\Oyosoft.AgenceImmobiliere.WcfService.pdb
