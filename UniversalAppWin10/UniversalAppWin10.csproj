@@ -99,16 +99,18 @@
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\NavigateToCommand.cs" />
+    <Compile Include="Commons\Connectivity.cs" />
     <Compile Include="Converters\ConnectionParametersConverter.cs" />
+    <Compile Include="Converters\DisconnectionParameterConverter.cs" />
     <Compile Include="Converters\NumericToVisibilityConverter.cs" />
     <Compile Include="Converters\ObjectToStringConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="DependencyObjects\EventBinding.cs" />
-    <Compile Include="ListeBiensPage.xaml.cs">
+    <Compile Include="Views\ListeBiensPage.xaml.cs">
       <DependentUpon>ListeBiensPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Views\ConnexionPage.xaml.cs">
+      <DependentUpon>ConnexionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Navigation\NavMenuItem.cs" />
     <Compile Include="Navigation\NavMenuListView.cs" />
@@ -142,11 +144,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListeBiensPage.xaml">
+    <Page Include="Views\ListeBiensPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\ConnexionPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -167,7 +169,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.UWP.2015, Version=3.11.0">
+    <SDKReference Include="SQLite.UWP.2015, Version=3.11.1">
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>

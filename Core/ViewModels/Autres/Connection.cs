@@ -32,7 +32,7 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
 
         private EventBindingCommand<EventArgs> _initializeCommand;
         private Command<ICommand> _connectUserCommand;
-        private Command _disconnectUserCommand;
+        private Command<ICommand> _disconnectUserCommand;
 
 
         public bool TraitementEnCours
@@ -130,11 +130,11 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
                 return _connectUserCommand ?? (_connectUserCommand = new Command<ICommand>(async (cmd) => await ConnectUser(cmd)));
             }
         }
-        public Command DisconnectUserCommand
+        public Command<ICommand> DisconnectUserCommand
         {
             get
             {
-                return _disconnectUserCommand ?? (_disconnectUserCommand = new Command(async () => await DisconnectUser()));
+                return _disconnectUserCommand ?? (_disconnectUserCommand = new Command<ICommand>(async (cmd) => await DisconnectUser(cmd)));
             }
         }
 
@@ -188,6 +188,8 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
                 this.Erreurs.Add("Il n'existe aucun utilisateur dans la base de données !");
             }
 
+            this.Utilisateur = _localConnection.ConnectedUser;
+
             this.InitialisationTerminee = true;
             this.TraitementEnCours = false;
         }
@@ -197,7 +199,7 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
             if (UtilisateurEstConnecte && (_user == null || _user.NomUtilisateur.ToUpper() != _localConnection.ConnectedUserName.ToUpper())) return;
             if (UtilisateurEstConnecte)
             {
-                DisconnectUser();
+                DisconnectUser(null);
                 if (!this.Erreurs.IsEmpty) return;
             }
 
@@ -229,7 +231,7 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
                 {
                     OperationResult result;
                     result = await this._distantService.ConnecterUtilisateurAsync(this.Utilisateur.NomUtilisateur, password);
-                    if (!result.Success)
+                    if (!result.Success && !result.Errors.IsEmpty)
                     {
                         this.Erreurs.AddRange(result.Errors, "Erreurs", this);
                         this.TraitementEnCours = false;
@@ -276,7 +278,7 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
             }
         }
 
-        public async Task DisconnectUser()
+        public async Task DisconnectUser(ICommand redirectCommand)
         {
             if (!UtilisateurEstConnecte) return;
 
@@ -299,7 +301,7 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
                 {
                     OperationResult result;
                     result = await this._distantService.DeconnecterUtilisateurAsync(this.Utilisateur.NomUtilisateur);
-                    if (!result.Success)
+                    if (!result.Success && !result.Errors.IsEmpty)
                     {
                         this.Erreurs.AddRange(result.Errors, "Erreurs", this);
                         this.TraitementEnCours = false;
@@ -316,6 +318,11 @@ namespace Oyosoft.AgenceImmobiliere.Core.ViewModels
 
             OnPropertyChanged("UtilisateurEstConnecte");
             this.TraitementEnCours = false;
+
+            if (this.Erreurs.IsEmpty && redirectCommand != null)
+            {
+                redirectCommand.Execute(null);
+            }
         }
 
     }

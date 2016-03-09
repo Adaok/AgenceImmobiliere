@@ -26,6 +26,5 @@ C:\Users\lp\Source\Repos\AgenceImmobiliere\Core\bin\Debug\Microsoft.Threading.Ta
 C:\Users\lp\Source\Repos\AgenceImmobiliere\Core\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\Users\lp\Source\Repos\AgenceImmobiliere\Core\bin\Debug\PCLStorage.xml
 C:\Users\lp\Source\Repos\AgenceImmobiliere\Core\bin\Debug\PCLStorage.Abstractions.xml
-C:\Users\lp\Source\Repos\AgenceImmobiliere\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
 C:\Users\lp\Source\Repos\AgenceImmobiliere\Core\obj\Debug\Oyosoft.AgenceImmobiliere.Core.dll
 C:\Users\lp\Source\Repos\AgenceImmobiliere\Core\obj\Debug\Oyosoft.AgenceImmobiliere.Core.pdb

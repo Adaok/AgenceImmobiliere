@@ -15,6 +15,7 @@
 
             <conv:ObjectToStringConverter x:Key="objStringConverter" />
             <conv:ConnectionParametersConverter x:Key="connectionConverter" />
+            <conv:DisconnectionParameterConverter x:Key="disconnectionConverter" />
             <conv:BoolToVisibilityConverter x:Key="visibilityConverter" />
             <conv:NumericToVisibilityConverter x:Key="numVisibilityConverter" />
 

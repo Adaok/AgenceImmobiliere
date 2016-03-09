@@ -59,7 +59,7 @@ namespace Oyosoft.AgenceImmobiliere.Core.DataAccess
                 if (string.IsNullOrEmpty(_connectedUserName)) return null;
                 if (_connectedUser != null && _connectedUser.NomUtilisateur.ToLower() != _connectedUserName.ToLower()) _connectedUser = null;
                 if (_connectedUser == null) _connectedUser = SelectItem<Model.Utilisateur, string>(Const.DB_UTILISATEUR_NOMUTILISATEUR_COLNAME, _connectedUserName).ExecuteSynchronously();
-                return null;
+                return _connectedUser;
             }
         }
         public Tools.ErrorsList Errors

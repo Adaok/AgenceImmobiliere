@@ -32,8 +32,32 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10
                 new NavMenuItem()
                 {
                     Symbol = Symbol.Home,
-                    Label = "Home Page",
-                    DestPage = typeof(MainPage)
+                    Label = "Liste des biens",
+                    DestPage = typeof(ListeBiensPage)
+                },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.ContactInfo,
+                    Label = "Liste des clients",
+                    DestPage = typeof(ListeBiensPage)
+                },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.Edit,
+                    Label = "Ajouter / Editer",
+                    DestPage = typeof(ListeBiensPage)
+                },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.Setting,
+                    Label = "Paramètres",
+                    DestPage = typeof(ListeBiensPage)
+                },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.Contact,
+                    Label = "Connexion",
+                    DestPage = typeof(ConnexionPage)
                 },
             });
 

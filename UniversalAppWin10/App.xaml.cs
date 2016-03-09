@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oyosoft.AgenceImmobiliere.UniversalAppWin10.Commons;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -82,13 +83,14 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10
                 Window.Current.Content = shell;
             }
 
-            if (shell.AppFrame.Content == null)
-            {
-                // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
-                // puis configurez la nouvelle page en transmettant les informations requises en tant que
-                // paramètre
-                shell.AppFrame.Navigate(typeof(MainPage), e.Arguments);
-            }
+            //if (shell.AppFrame.Content == null)
+            //{
+            //    // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
+            //    // puis configurez la nouvelle page en transmettant les informations requises en tant que
+            //    // paramètre
+            //    shell.AppFrame.Navigate(typeof(ConnexionPage), e.Arguments);
+            //}
+            Connectivity.LaunchWithoutMenu(typeof(ConnexionPage));
             // Vérifiez que la fenêtre actuelle est active
             Window.Current.Activate();
         }
@@ -112,9 +114,17 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10
         /// <param name="e">Détails de la requête de suspension.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
+            Core.ViewModels.Connection con = new Core.ViewModels.Connection();
+            con.DisconnectUser(null);
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: enregistrez l'état de l'application et arrêtez toute activité en arrière-plan
             deferral.Complete();
         }
+
+        private void OnResuming(object sender, object e)
+        {
+            Connectivity.LaunchWithoutMenu(typeof(ConnexionPage));
+        }
+
     }
 }

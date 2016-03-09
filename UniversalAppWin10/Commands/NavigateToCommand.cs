@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oyosoft.AgenceImmobiliere.UniversalAppWin10.Commons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,16 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10.Commands
         public event EventHandler CanExecuteChanged;
 
         private readonly Type _nextPageType;
+        private readonly bool _withMenu;
 
-        public NavigateToCommand(Type nextPageType)
+        public NavigateToCommand(Type nextPageType, bool withMenu)
         {
             if (nextPageType == null)
             {
                 throw new ArgumentNullException("nextPageType");
             }
             _nextPageType = nextPageType;
+            _withMenu = withMenu;
         }
 
         public bool CanExecute(object parameter)
@@ -33,8 +36,10 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10.Commands
         {
             if (CanExecute(parameter) && _nextPageType != null)
             {
-                Frame rootFrame = Window.Current.Content as Frame;
-                rootFrame.Navigate(_nextPageType);
+                if (_withMenu)
+                    Connectivity.LaunchWithMenu(_nextPageType);
+                else
+                    Connectivity.LaunchWithoutMenu(_nextPageType);
             }
         }
     }
