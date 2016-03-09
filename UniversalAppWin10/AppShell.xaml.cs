@@ -1,4 +1,5 @@
 ﻿using Oyosoft.AgenceImmobiliere.UniversalAppWin10.Navigation;
+using Oyosoft.AgenceImmobiliere.UniversalAppWin10.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,19 +40,13 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10
                 {
                     Symbol = Symbol.ContactInfo,
                     Label = "Liste des clients",
-                    DestPage = typeof(ListeBiensPage)
-                },
-                new NavMenuItem()
-                {
-                    Symbol = Symbol.Edit,
-                    Label = "Ajouter / Editer",
-                    DestPage = typeof(ListeBiensPage)
+                    DestPage = typeof(ListeClientsPage)
                 },
                 new NavMenuItem()
                 {
                     Symbol = Symbol.Setting,
                     Label = "Paramètres",
-                    DestPage = typeof(ListeBiensPage)
+                    DestPage = typeof(ParametresPage)
                 },
                 new NavMenuItem()
                 {
