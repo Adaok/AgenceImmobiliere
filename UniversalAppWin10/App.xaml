@@ -7,31 +7,43 @@
     RequestedTheme="Light">
 
     <Application.Resources>
-        <conv:ObjectToStringConverter x:Key="objStringConverter" />
-        <conv:ConnectionParametersConverter x:Key="connectionConverter" />
-        <conv:BoolToVisibilityConverter x:Key="visibilityConverter" />
-        <conv:NumericToVisibilityConverter x:Key="numVisibilityConverter" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
 
-        <Style TargetType="TextBlock" x:Key="libelle">
-            <Setter Property="TextAlignment" Value="Left"/>
-            <Setter Property="TextTrimming" Value="None"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Margin" Value="0,0,5,0"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
 
-        <Style TargetType="TextBlock" x:Key="message">
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="TextTrimming" Value="None"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="erreur" BasedOn="{StaticResource message}">
-            <Setter Property="Foreground" Value="Red"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="avertissement" BasedOn="{StaticResource message}">
-            <Setter Property="Foreground" Value="Gold"/>
-        </Style>
+            <conv:ObjectToStringConverter x:Key="objStringConverter" />
+            <conv:ConnectionParametersConverter x:Key="connectionConverter" />
+            <conv:BoolToVisibilityConverter x:Key="visibilityConverter" />
+            <conv:NumericToVisibilityConverter x:Key="numVisibilityConverter" />
+
+            <Style TargetType="TextBlock" x:Key="libelle">
+                <Setter Property="TextAlignment" Value="Left"/>
+                <Setter Property="TextTrimming" Value="None"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="Margin" Value="0,0,5,0"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="TextBlock" x:Key="message">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="TextTrimming" Value="None"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="erreur" BasedOn="{StaticResource message}">
+                <Setter Property="Foreground" Value="Red"/>
+            </Style>
+            <Style TargetType="TextBlock" x:Key="avertissement" BasedOn="{StaticResource message}">
+                <Setter Property="Foreground" Value="Gold"/>
+            </Style>
+
+        </ResourceDictionary>
+        
+        
+
+        
     </Application.Resources>
 </Application>
