@@ -59,16 +59,19 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10
             Core.ViewModels.Connection._endpointConfigurationName = "";
             Core.ViewModels.Connection._endpointConfigurationAddress = ENDPOINT_ADRESS;
 
-            Frame rootFrame = Window.Current.Content as Frame;
+            AppShell shell = Window.Current.Content as AppShell;
 
             // Ne répétez pas l'initialisation de l'application lorsque la fenêtre comporte déjà du contenu,
             // assurez-vous juste que la fenêtre est active
-            if (rootFrame == null)
+            if (shell == null)
             {
                 // Créez un Frame utilisable comme contexte de navigation et naviguez jusqu'à la première page
-                rootFrame = new Frame();
+                shell = new AppShell();
 
-                rootFrame.NavigationFailed += OnNavigationFailed;
+                //default language
+                shell.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
+
+                shell.AppFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
@@ -76,15 +79,15 @@ namespace Oyosoft.AgenceImmobiliere.UniversalAppWin10
                 }
 
                 // Placez le frame dans la fenêtre active
-                Window.Current.Content = rootFrame;
+                Window.Current.Content = shell;
             }
 
-            if (rootFrame.Content == null)
+            if (shell.AppFrame.Content == null)
             {
                 // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
                 // puis configurez la nouvelle page en transmettant les informations requises en tant que
                 // paramètre
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                shell.AppFrame.Navigate(typeof(MainPage), e.Arguments);
             }
             // Vérifiez que la fenêtre actuelle est active
             Window.Current.Activate();
